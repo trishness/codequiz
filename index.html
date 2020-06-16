@@ -14,6 +14,7 @@
     </head>
     <body>
         <div class="container">
+            <div class="startDiv">
             <div class="row">
                 <div class="col-12">
                     <h1 class="center">Time to Test your Skills!</h1>
@@ -29,8 +30,13 @@
                 <div class="col-12">
                     <p class="center">Time to Test your Skills!</p>
                 </div>
+
             </div>
-            <div class="container-fluid">
+            <div class="row">
+                <button type="button" id="startBtn" class="btn btn-danger col-12">Click to Start!</button>
+            </div>
+        </div>
+            <div class="container-fluid questionsDiv">
                 <div class="row">
                     <div class="col-8 quizBox pd-auto>">
                         <div class="row">
@@ -40,13 +46,14 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <button type="button" id="startBtn" class="btn btn-danger">Click to Start!</button>
+                                    <h1 class="showQuestion"></h1>
+
+                                    <br>
                                     <div class="buttons">
-                                        <button id="button0"><span id="choice0"></span></button>
-                                        <button id="button0"><span id="choice1"></span></button>
-                                        <button id="button0"><span id="choice2"></span></button>
-                                        <button id="button0"><span id="choice3"></span></button>
-                                        <button id="button0"><span id="choice4"></span></button>
+                                        <button type="button" class="btn btn-dark" id="button0"><span id="choice0"></span></button>
+                                        <button type="button" class="btn btn-dark" id="button1"><span id="choice1"></span></button>
+                                        <button type="button" class="btn btn-dark" id="button2"><span id="choice2"></span></button>
+                                        <button type="button" class="btn btn-dark" id="button3"><span id="choice3"></span></button>
                                     </div>
                             </div>
                         </div>
