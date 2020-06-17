@@ -2,19 +2,24 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="startDiv">
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="startDiv">
             <div class="row">
                 <div class="col-12">
                     <h1 class="center">Time to Test your Skills!</h1>
@@ -27,57 +32,86 @@
                 </div>
             </div>
             <br>
-            
+
             <div class="row">
                 <div class="col-12">
                     <p class="center">Let's see what you've got!</p>
                 </div>
-            
+
                 <br>
             </div>
             <div class="row">
-                <button type="button" id="startBtn" class="btn btn-danger btn-lg btn-block col-12">Click to Start!</button>
+                <button type="button" id="startBtn" class="btn btn-danger btn-lg btn-block col-12">Click to
+                    Start!</button>
             </div>
         </div>
-            <div class="container-fluid questionsDiv">
-                <div class="row">
-                    <div class="col-8 quizBox pd-auto>">
-                        <div class="row">
-                            <div class="col-12">
-                                <p id="timer">90</p>
-                            </div>
+        <div class="container-fluid questionsDiv">
+            <div class="row">
+                <div class="col-8 quizBox pd-auto>">
+                    <div class="row">
+                        <div class="col-12">
+                            <p id="timer">90</p>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                    <h1 class="showQuestion"></h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="showQuestion"></h1>
 
-                                    <br>
-                                    <div class="buttons">
-                                        <button type="button" class="btn btn-dark btn-lg btn-block" id="button0"><span id="choice0"></span></button>
-                                        <br>
-                                        <br>
-                                        <button type="button" class="btn btn-dark btn-lg btn-block" id="button1"><span id="choice1"></span></button>
-                                        <br>
-                                        <br>
-                                        <button type="button" class="btn btn-dark btn-lg btn-block" id="button2"><span id="choice2"></span></button>
-                                        <br>
-                                        <br>
-                                        <button type="button" class="btn btn-dark btn-lg btn-block" id="button3"><span id="choice3"></span></button>
-                                    </div>
+                            <br>
+                            <div class="buttons">
+                                <button type="button" class="btn btn-dark btn-lg btn-block" id="button0"><span
+                                        id="choice0"></span></button>
+                                <br>
+                                <br>
+                                <button type="button" class="btn btn-dark btn-lg btn-block" id="button1"><span
+                                        id="choice1"></span></button>
+                                <br>
+                                <br>
+                                <button type="button" class="btn btn-dark btn-lg btn-block" id="button2"><span
+                                        id="choice2"></span></button>
+                                <br>
+                                <br>
+                                <button type="button" class="btn btn-dark btn-lg btn-block" id="button3"><span
+                                        id="choice3"></span></button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-            </div>
-            </div>
-            
         </div>
-        <
-        
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="script.js" ></script>
-    </body>
+    </div>
+
+    </div>
+    <div class="container-fluid scoreBoard">
+        <div class="row">
+            <div class="col-12">
+                <form class="form-inline">
+                    <div class="form-group mb-2">
+                        <label for="staticEmail2" class="sr-only">Email</label>
+                        <input type="text" readonly class="form-control-plaintext" id="staticEmail2"
+                            value="email@example.com">
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="inputPassword2" class="sr-only">Password</label>
+                        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
 </html>

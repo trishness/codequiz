@@ -28,7 +28,7 @@ var scoreBoard = document.getElementById("scoreBoard");
 var userForm = document.getElementById("userForm");
 var userInput = document.getElementById("inputForm");
 
-
+//scoreBoard.style.display="none"
 questionsDiv.style.display = "none"
 //want timer to start when user clicks start quiz
 //var secondsLeft = 90;
@@ -121,7 +121,7 @@ buttonsDiv.addEventListener("click", function (event) {
         console.log(secondsLeft);
         score = localStorage.setItem("secondsLeft")
         questionsDiv.style.display = "none";
-        //show scoreboard form
+        //scoreBoard.style.display = "block"
         
     } else{ 
         printToScreen();
