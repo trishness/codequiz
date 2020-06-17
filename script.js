@@ -14,16 +14,19 @@
 var timer = document.querySelector("#timer");
 var main = document.getElementById("main");
 var startButton = document.querySelector("#startBtn");
-var startDiv = document.querySelector(".startDiv")
-var questionsDiv = document.querySelector(".questionsDiv")
-var questionH1 = document.querySelector(".showQuestion")
-var option1 = document.querySelector("#button0")
-var option2 = document.querySelector("#button1")
-var option3 = document.querySelector("#button2")
-var option4 = document.querySelector("#button3")
-var buttonsDiv = document.querySelector(".buttons")
+var startDiv = document.querySelector(".startDiv");
+var questionsDiv = document.querySelector(".questionsDiv");
+var questionH1 = document.querySelector(".showQuestion");
+var option1 = document.querySelector("#button0");
+var option2 = document.querySelector("#button1");
+var option3 = document.querySelector("#button2");
+var option4 = document.querySelector("#button3");
+var buttonsDiv = document.querySelector(".buttons");
 var secondsLeft = 90;
-var myIndex = 0
+var myIndex = 0;
+var scoreBoard = document.getElementById("scoreBoard");
+var userForm = document.getElementById("userForm");
+var userInput = document.getElementById("inputForm");
 
 
 questionsDiv.style.display = "none"
@@ -33,6 +36,7 @@ questionsDiv.style.display = "none"
 document.getElementById("startBtn").addEventListener("click", function () {
     questionsDiv.style.display = "block"
     startDiv.style.display = "none"
+ 
     printToScreen()
 
     setTime(),
@@ -46,7 +50,6 @@ function setTime() {
 
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
-            sendMessage()
         }
     }, 1000);
 }
@@ -56,6 +59,11 @@ function sendMessage() {
     if (secondsLeft === 0) {
         alert(timer.textContent)
     };
+    finalScreen();
+}
+
+function finalScreen() {
+
 }
 
 
@@ -95,29 +103,29 @@ function printToScreen() {
     option1.textContent = questionsArr[myIndex].options[0]
     option2.textContent = questionsArr[myIndex].options[1]
     option3.textContent = questionsArr[myIndex].options[2]
-    option4.textContent = questionsArr[myIndex].options[3] //why does this one have a type error???
+    option4.textContent = questionsArr[myIndex].options[3]
 }
 
 buttonsDiv.addEventListener("click", function (event) {
     console.log(event.target.textContent);
-    myIndex++
-    printToScreen()
-
-    //for (let i=0; i <questionsArr.length; i++) {
+    
     if (event.target.textContent !== questionsArr[myIndex].correctAnswer) {
         (secondsLeft--, secondsLeft--, secondsLeft--, secondsLeft--, secondsLeft--);
         console.log(secondsLeft);
         }
-   // }
 
-    if (myIndex > questionsArr.length) {
+    myIndex++
+
+    if (myIndex >= questionsArr.length) {
         alert(`Congratulations! You finished the quiz with a score of ${secondsLeft}!`)
+        console.log(secondsLeft);
+        score = localStorage.setItem("secondsLeft")
+        questionsDiv.style.display = "none";
+        //show scoreboard form
+        
+    } else{ 
+        printToScreen();
     }
-    //why is this printing after the first question??? something about objects???
-
-    //if statement for if my index < questionsArr.length, printtoscreen
-    //score counter, if options === correctanswer, score is time left when finished with quiz, alert at the end
-    //if input is incorrect, deduct from time
 })
 
 //
