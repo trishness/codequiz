@@ -1,16 +1,3 @@
-//create button on html page
-//grab button inside query selector in java
-//even listener when user clicks
-//when click, go to question
-//can put questions into html or javascript, java is dom manipulation
-//one question, some options to said question
-//user click option, is correct or incorrect, compare user choice to correct answer
-//for loop over questions to ask multiple questions, can use array
-//keep track of indices for arrays for comparison, how to compare arrays????
-//timer outside of for loop, so that timer isn't restarting with the loop, same goes for eventlisteners
-//create function for timer, run function when user starts quiz
-//if user answers incorrectly, deduct time. if/else?
-
 var timer = document.querySelector("#timer");
 var main = document.getElementById("main");
 var startButton = document.querySelector("#startBtn");
@@ -24,18 +11,19 @@ var option4 = document.querySelector("#button3");
 var buttonsDiv = document.querySelector(".buttons");
 var secondsLeft = 90;
 var myIndex = 0;
-var scoreBoard = document.getElementById("scoreBoard");
-var userForm = document.getElementById("userForm");
-var userInput = document.getElementById("inputForm");
+var scoreBoard = document.querySelector(".scoreBoard");
+var userArray=JSON.parse(localStorage.getItem("user")) || []; 
 
-//scoreBoard.style.display="none"
+
+//welcome page
+scoreBoard.style.display="none"
 questionsDiv.style.display = "none"
-//want timer to start when user clicks start quiz
-//var secondsLeft = 90;
 
+//begin quiz
 document.getElementById("startBtn").addEventListener("click", function () {
     questionsDiv.style.display = "block"
     startDiv.style.display = "none"
+    
  
     printToScreen()
 
@@ -43,6 +31,7 @@ document.getElementById("startBtn").addEventListener("click", function () {
         console.log(secondsLeft)
 })
 
+//timer
 function setTime() {
     var timerInterval = setInterval(function () {
         secondsLeft--;
@@ -62,11 +51,7 @@ function sendMessage() {
     finalScreen();
 }
 
-function finalScreen() {
-
-}
-
-
+//quiz questions
 var questionsArr = [
     {
         question: "Which of the following is an example of a boolean?",
@@ -95,7 +80,7 @@ var questionsArr = [
     }
 ]
 
-
+//cycle through quiz questions
 function printToScreen() {
 
     questionH1.textContent = questionsArr[myIndex].question
@@ -109,6 +94,7 @@ function printToScreen() {
 buttonsDiv.addEventListener("click", function (event) {
     console.log(event.target.textContent);
     
+    //checking for correct answer, corresponding time penalty
     if (event.target.textContent !== questionsArr[myIndex].correctAnswer) {
         (secondsLeft--, secondsLeft--, secondsLeft--, secondsLeft--, secondsLeft--);
         console.log(secondsLeft);
@@ -116,16 +102,46 @@ buttonsDiv.addEventListener("click", function (event) {
 
     myIndex++
 
+    //finishing quiz
     if (myIndex >= questionsArr.length) {
         alert(`Congratulations! You finished the quiz with a score of ${secondsLeft}!`)
         console.log(secondsLeft);
-        score = localStorage.setItem("secondsLeft")
-        questionsDiv.style.display = "none";
-        //scoreBoard.style.display = "block"
+        userScore = secondsLeft;
+        console.log(userScore);
+
+        var userName = prompt("What would you like your username to be?");
+        console.log(userName);
+
+        var userInfo = {
+            username: userName,
+            score: userScore
+        }
+        userArray.push(userInfo);
+        localStorage.setItem("user", JSON.stringify(userArray))
+        console.log(userInfo)
+
+        questionsDiv.style.display = "none"
+        scoreBoard.style.display = "block"
+
+        //scoreboard
+        for (var i=0; i < userArray.length; i++){
+            
+            var row1 = document.createElement("tr")
+            var col1 = document.createElement("td")
+                col1.textContent= i+1
+            var col2 = document.createElement("td")
+                col2.textContent= userArray[i].username
+            var col3 = document.createElement("td")
+                col3.textContent=userArray[i].score
+            row1.appendChild(col1)
+            row1.appendChild(col2)
+            row1.appendChild(col3)
+            document.getElementById('scoreBoard').appendChild(row1)
+        }
+    
+        
         
     } else{ 
         printToScreen();
     }
 })
-
-//
